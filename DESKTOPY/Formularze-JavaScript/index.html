@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularze Rezerwacja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="labele">
+            <label for="liczba-doroslych">Podaj liczbę dorosłych:</label>
+            <label for="liczba-dzieci">Podaj liczbę dzieci:</label>
+            <label for="liczba-dni">Podaj liczbę dni:</label>
+        </div>
+        <div id="inputy">
+            <input type="number" id="liczba-doroslych" name="liczba-doroslych" min="0">
+            <input type="number" id="liczba-dzieci" name="liczba-dzieci" min="0">
+            <input type="number" id="liczba-dni" name="liczba-dni" min="0">
+            <button type="button" id="oblicz">Oblicz</button>
+        </div>
+        <div id="wynik" width="100%"></div>
+    <script>
+        document.getElementById("oblicz").addEventListener("click", function() {
+            var liczbaDoroslych = parseInt(document.getElementById("liczba-doroslych").value) || 0;
+            var liczbaDzieci = parseInt(document.getElementById("liczba-dzieci").value) || 0;
+            var liczbaDni = parseInt(document.getElementById("liczba-dni").value) || 0;
+
+            var kosztDorosly = 50; // Koszt za dorosłego na dzień
+            var kosztDziecko = 10; // Koszt za dziecko na dzień
+
+            var kosztCalkowity = (liczbaDoroslych * kosztDorosly + liczbaDzieci * kosztDziecko) * liczbaDni;
+
+            document.getElementById("wynik").innerHTML = "Dokonałeś rezerwacji na " + liczbaDoroslych + " dorosłych i " + liczbaDzieci + " dzieci na " + liczbaDni + " dni. Całkowity koszt wynosi: " + kosztCalkowity + " zł.";
+        });
+    </script>
+</body>
+</html>
