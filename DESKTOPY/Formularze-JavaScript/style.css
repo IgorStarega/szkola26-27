@@ -4,6 +4,7 @@ body {
     width: 450px;
     padding: 20px;
     box-sizing: border-box;
+    background-color: lightblue;
 }
 
 #labele, #inputy {
