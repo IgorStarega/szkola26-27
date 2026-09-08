@@ -6,7 +6,6 @@ body {
     box-sizing: border-box;
     background-color: lightblue;
 }
-
 #labele, #inputy {
     float: left;
 }
