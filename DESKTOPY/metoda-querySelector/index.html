@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="1">
+        <h1>Zadanie 1</h1>
+        <form action="">
+            <input type="radio" name="kolor" value="czerwony">
+            <label for="czerwony">Czerwony</label>
+            <input type="radio" name="kolor" value="zielony">
+            <label for="zielony">Zielony</label>
+            <input type="radio" name="kolor" value="niebieski">
+            <label for="niebieski">Niebieski</label>
+            <button type="button" onclick="sprawdzKolor()">Sprawdź</button>
+        </form>
+    </div>
+    <div id="2">
+        <h1>Zadanie 2</h1>
+        <form action="">
+            <input type="radio" name="jezyk" value="JavaScript">
+            <label for="JavaScript">JavaScript</label>
+            <input type="radio" name="jezyk" value="Python">
+            <label for="Python">Python</label>
+            <input type="radio" name="jezyk" value="Java">
+            <label for="Java">Java</label>
+            <input type="radio" name="jezyk" value="C#">
+            <label for="C#">C#</label>
+            <button type="button" onclick="sprawdzJezyk()">Sprawdź</button>
+        </form>
+        <p id="wynik"></p>
+    </div>
+    <div id="3">
+        <h1>Zadanie 3</h1>
+        <form action="">
+            <input type="radio" name="ocena" value="Bardzo źle">
+            <label for="Bardzo źle">Bardzo źle,</label>
+            <input type="radio" name="ocena" value="Źle">
+            <label for="Źle">Źle,</label>
+            <input type="radio" name="ocena" value="Średnio">
+            <label for="Średnio">Średnio,</label>
+            <input type="radio" name="ocena" value="Dobrze">
+            <label for="Dobrze">Dobrze,</label>
+            <input type="radio" name="ocena" value="Bardzo dobrze">
+            <label for="Bardzo dobrze">Bardzo dobrze</label>
+            <button type="button" onclick="Ocena()">Oceń</button>
+        </form>
+        <p id="ocenaWynik"></p>
+    </div>
+    <div id="4">
+        <h1>Zadanie 4</h1>
+        <p>Jaka metoda służy do pobrania elementu HTML za pomocą selektora CSS?</p>
+        <form action="">
+            <input type="radio" name="odpowiedz" value="getElementById()">
+            <label for="getElementById()">getElementById()</label>
+            <input type="radio" name="odpowiedz" value="querySelector()">
+            <label for="querySelector()">querySelector()</label>
+            <input type="radio" name="odpowiedz" value="createElement()">
+            <label for="createElement()">createElement()</label>
+            <input type="radio" name="odpowiedz" value="addEventListener()">
+            <label for="addEventListener()">addEventListener()</label>
+            <button type="button" onclick="sprawdzOdpowiedz()">Sprawdź odpowiedź</button>
+            <p id="quizWynik"></p>
+        </form>
+    </div>
+    <footer>
+        <p>Twórca: Wilson</p>
+    </footer>
+    <script>
+        function sprawdzKolor() {
+            const wybranyKolor = document.querySelector('input[name="kolor"]:checked');
+            if (wybranyKolor) {
+                alert(`Wybrano: ${wybranyKolor.value}`);
+            } else {
+                alert('Nie wybrano koloru!');
+            }
+        }
+
+        function sprawdzJezyk() {
+            const wybranyJezik = document.querySelector('input[name="jezyk"]:checked');
+            if (wybranyJezik) {
+                document.getElementById('wynik').textContent = `Twój ulubiony język to: ${wybranyJezik.value}`;
+            } else {
+                document.getElementById('wynik').textContent = 'Wybierz język!';
+            }
+        }
+
+        function Ocena() {
+            const wybranaOcena = document.querySelector('input[name="ocena"]:checked');
+            if (wybranaOcena) {
+                document.getElementById('ocenaWynik').textContent = `Wybrana ocena: ${wybranaOcena.value}`;
+                document.getElementById('ocenaWynik').textContent += ' - Dziękujemy za ocenę!';
+            } else {
+                document.getElementById('ocenaWynik').textContent = 'Wybierz ocenę przed wyświetleniem.';
+            }
+        }
+
+        function sprawdzOdpowiedz() {
+            const wybrana = document.querySelector('input[name="odpowiedz"]:checked');
+            if (wybrana) {
+                if (wybrana.value === 'querySelector()') {
+                    document.getElementById('quizWynik').textContent = 'Poprawna odpowiedź!';
+                } else {
+                    document.getElementById('quizWynik').textContent = 'Błędna odpowiedź.';
+                }
+            } else {
+                document.getElementById('quizWynik').textContent = 'Wybierz odpowiedź.';
+            }
+        }
+    </script>
+</body>
+</html>
