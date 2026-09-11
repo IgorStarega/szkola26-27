@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdź długość tekstu</title>
+</head>
+<body>
+    <input type="text" id="tekst" placeholder="Wpisz tekst">
+    <button id="sprawdz">Sprawdź długość</button>
+    <p id="wynik"></p>
+
+    <script>
+        const tekst = document.getElementById("tekst");
+        const sprawdz = document.getElementById("sprawdz");
+        const wynik = document.getElementById("wynik");
+
+        sprawdz.addEventListener("click", function () {
+            const dlugosc = tekst.value.replaceAll(" ", "").length;
+            wynik.textContent = "Liczba znaków: " + dlugosc;
+        });
+    </script>
+</body>
+</html>
