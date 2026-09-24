@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obiekt Date</title>
+</head>
+<body>
+    <div>
+        <div id="zad1"></div><hr>
+        <div id="zad2"></div><hr>
+        <div id="zad3"></div><hr>
+        <div id="zad4"></div><hr>
+        <div id="zad5"></div><hr>
+        <div id="zad6"></div><hr>
+        <div id="zad7"></div><hr>
+        <div id="zad8"></div><hr>
+        <div id="zad9"></div>
+    </div>
+    <script>
+        var data = new Date();
+        document.getElementById("zad1").innerHTML = data;
+        var dzien = data.getDate();
+        var tydzien = data.getDay();
+        var miesiac = (data.getMonth()) + 1;
+        document.getElementById("zad2").innerHTML = "Dzień: " + dzien + "<br>" + "Dzień tygodnia: " + tydzien + "<br>" + "Miesiąc: " + miesiac;     
+        var godzina = data.getHours();
+        var minuta = data.getMinutes();
+        var sekunda = data.getSeconds();
+        document.getElementById("zad3").innerHTML = "Godzina: " + godzina + "<br>" + "Minuta: " + minuta + "<br>" + "Sekunda: " + sekunda;
+        document.getElementById("zad4").innerHTML = "Dzien miesiaca: " + data.getDate() + "<br>";
+        document.getElementById("zad4").innerHTML += "Dzien tygodnia: " + data.getDay() + "<br>";
+        document.getElementById("zad4").innerHTML += "Miesiac: " + (data.getMonth() + 1) + "<br>";
+        document.getElementById("zad4").innerHTML += "Godzina: " + data.getHours() + "<br>";
+        document.getElementById("zad4").innerHTML += "Minuty: " + data.getMinutes() + "<br>";
+        document.getElementById("zad4").innerHTML += "Sekundy: " + data.getSeconds();
+        document.getElementById("zad5").innerHTML = "Czas w GMT: " + data.toGMTString() + "<br>" + "Czas localny: " + data.toLocaleString();
+        var data2 = new Date();
+        data2.setDate(12);
+        document.getElementById("zad6").innerHTML = data2;
+        var data3 = new Date();
+        data3.setHours(12);
+        data3.setMinutes(30);
+        data3.setSeconds(0);
+        document.getElementById("zad7").innerHTML = data3;
+        var data4 = new Date();
+        document.getElementById("zad8").innerHTML = "Dzisiaj jest: " + data4 + "<br>";
+        document.getElementById("zad8").innerHTML += "Miesiac: " + (data4.getMonth() + 1) + "<br>";
+        document.getElementById("zad8").innerHTML += "Dzien miesiaca: " + data4.getDate() + "<br>";
+        document.getElementById("zad8").innerHTML += "Dzien tygodnia: " + data4.getDay() + "<br>";
+         var data5 = new Date();
+        document.getElementById("zad9").innerHTML = "Dzisiaj jest: " + data5 + "<br>";
+        document.getElementById("zad9").innerHTML += "Czas w GMT: " + data5.toUTCString() + "<br>";
+        document.getElementById("zad9").innerHTML += "Czas lokalny: " + data5.toLocaleString() + "<br>";
+        document.getElementById("zad9").innerHTML += "Miesiąc: " + (data5.getMonth() + 1) + "<br>";
+        document.getElementById("zad9").innerHTML += "Dzień miesiąca: " + data5.getDate() + "<br>";
+        document.getElementById("zad9").innerHTML += "Dzień tygodnia: " + data5.getDay() + "<br>";
+        document.getElementById("zad9").innerHTML += "Godzina: " + data5.getHours() + "<br>";
+        document.getElementById("zad9").innerHTML += "Minuty: " + data5.getMinutes() + "<br>";
+        document.getElementById("zad9").innerHTML += "Sekundy: " + data5.getSeconds() + "<br>";
+    </script>
+</body>
+</html>
