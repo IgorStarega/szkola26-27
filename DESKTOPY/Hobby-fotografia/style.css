@@ -1,0 +1,40 @@
+body {
+font-family: Cambria;
+color: black;
+background-color: AntiqueWhite;
+}
+header, footer {
+background-color: Sienna;
+color: white;
+padding: 10px;
+text-align: center;
+}
+main {
+display: flex;
+background-color: Linen;
+gap: 20px;
+}
+nav a {
+text-decoration: none;
+color: white;
+}
+nav a:hover {
+background-color: Peru;
+}
+article {
+border: 1px solid Sienna;
+border-radius: 10px;
+margin: 15px;
+padding: 10px;
+}
+article:hover {
+background-color: #f4e3d7;
+}
+aside {
+width: 25%;
+background-color: #fef6e4;
+font-size: 90%;
+}
+footer {
+border-top: 2px solid Sienna;
+}
